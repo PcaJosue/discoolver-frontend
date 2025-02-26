@@ -7,6 +7,7 @@ import FilterTop from "../../components/ui/filterTop/FilterTop";
 import SecondaryPostList from "../../components/ui/secondary_post/SecondaryPost";
 import ListPlan from "../../components/ui/plans/ListPlan/ListPlan";
 import styles from "./Home.module.scss";
+import InfluencerList from "../../components/ui/InfluencerList/InfluencerList";
 const Home = () => {
 
     const filterState = useState(false);
@@ -15,14 +16,17 @@ const Home = () => {
     return (
         <div>
             <Header filterState={filterState}/>
+            
             <div className={styles.homeContainer}>
                 {isFilterActive && <FilterTop filterState={filterState}/>}
                 {!isFilterActive && <RecommendedTop />}
+                <InfluencerList/>
                 <SecondaryPostList />
                 <ListPlan />
                 {posts.map((post, index) => (
                     <MainPost key={index} {...post} />
                 ))}
+                
             </div>
         </div>
     )
