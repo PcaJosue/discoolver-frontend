@@ -1,0 +1,22 @@
+.menuButtonContainer {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.round {
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    fill: transparent !important;
+    padding: 4px;
+}
+
+.active svg{
+    fill: #2B2B40;
+}
+
+
+
+

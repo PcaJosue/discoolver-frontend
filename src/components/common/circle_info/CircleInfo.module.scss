@@ -1,0 +1,35 @@
+.counterContainer {
+    margin-left: -8px;
+    width: 32px;
+    height: 21px;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7.5px;
+    z-index: 20;
+  }
+  
+  .counterBox {
+    padding: 4.5px 3px; // top-bottom 4.5px, left-right 3px
+    background: white;
+    border-radius: 66.67px;
+    overflow: hidden;
+    border: 1.12px solid white;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 7.5px;
+  }
+  
+  .counterText {
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 12px;
+    word-wrap: break-word;
+  }
+  

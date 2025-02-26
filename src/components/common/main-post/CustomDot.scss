@@ -1,0 +1,13 @@
+.customDot {
+    width: 8px;
+    height: 8px;
+    background-color: #CFD8DC;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.customDotActive {
+    background: linear-gradient(to right, #FF03C8, #A2027F);
+}

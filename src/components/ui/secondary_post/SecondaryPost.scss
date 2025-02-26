@@ -1,0 +1,112 @@
+.containerSecondaryPost {
+    user-select: none; // Deshabilita la selección de texto en la mayoría de navegadores
+    -webkit-user-select: none; // Ajuste para Safari/Chrome
+    -moz-user-select: none;
+}
+
+.secondaryPostList {
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.secondaryPostContainer {
+    padding-bottom: 16px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    -webkit-box-shadow: 2px 8px 5px -3px rgba(69, 90, 100, 0.24);
+    -moz-box-shadow: 2px 8px 5px -3px rgba(69, 90, 100, 0.24);
+    box-shadow: 2px 8px 5px -3px rgba(69, 90, 100, 0.24);
+
+}
+
+.secondaryPostImage {
+    position: relative;
+
+    img {
+        width: 235px !important;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        border-radius: 8px;
+        overflow: hidden;
+
+    }
+
+    span {
+        color: #2B2B40;
+        font-size: 14px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        line-height: 14px;
+        word-wrap: break-word;
+        position: absolute;
+        background-color: white;
+        padding: 4px 8px;
+        bottom: 8px;
+        left: 8px;
+        border-radius: 32px;
+        text-transform: capitalize;
+        outline: 2px solid white;
+        outline-offset: 2px;
+    }
+}
+
+.carousel-secondaryPost {
+    padding: 16px;
+
+    ul {
+        display: flex;
+        gap: 16px;
+        width: -webkit-fill-available;
+    }
+}
+
+.secondaryPostContent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.secondaryPostInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    width: 179px;
+
+    .secondaryPostName {
+        width: 179px;
+        color: #263238;
+        font-size: 14px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        line-height: 14px;
+        word-wrap: break-word;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .secondaryPostNickname {
+        width: 179px;
+        color: #455A64;
+        font-size: 12px;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        line-height: 12px;
+        word-wrap: break-word;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}

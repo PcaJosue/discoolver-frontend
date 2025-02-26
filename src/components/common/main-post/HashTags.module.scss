@@ -1,0 +1,29 @@
+.hashtagsContainer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.hashtag{
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px #90A4AE solid;
+    justify-content: center;
+    align-items: center;
+    color: #90A4AE;
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    line-height: 12px;
+    word-wrap: break-word;
+}
+
+.moreHashtags{
+    color: #455A64;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 12px;
+    word-wrap: break-word;
+}

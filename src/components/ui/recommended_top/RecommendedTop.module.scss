@@ -1,0 +1,21 @@
+.recommendedTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px ;
+    width: 100%;
+    padding: 0 16px;
+    border-bottom: 1px #ECEFF1 solid;
+}
+
+.recommendedTopTitle{
+    color: #263238;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    line-height: 14px;
+    word-wrap: break-word;
+}
+
+
+
