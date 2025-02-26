@@ -1,9 +1,9 @@
 import icons from "../../../assets/icons";
 
 
-function SVGIcon({ name, color = "black", width=24, height=24 }) {
+function SVGIcon({ name, color = "black", width, height }) {
     return (
-        <span style={{ display: "inline-block", width: width, height: height, color, cursor: "pointer"   }}>
+        <span style={{ display: "inline-block", width: width, height: height, color   }}>
             {icons[name]}
         </span>
     );

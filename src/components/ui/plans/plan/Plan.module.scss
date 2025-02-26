@@ -1,0 +1,38 @@
+.PlanContainer {
+    padding: 16px;
+    position: relative;
+    width: fit-content;
+    box-sizing: content-box;
+}
+
+
+.PlanImageContent {
+    img{
+        width: 235px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    button {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+    }
+}
+
+.PlanTitleContent {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.PlanDescriptionContent {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+

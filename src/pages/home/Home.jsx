@@ -5,6 +5,8 @@ import posts from "../../assets/posts";
 import { useState } from "react";
 import FilterTop from "../../components/ui/filterTop/FilterTop";
 import SecondaryPostList from "../../components/ui/secondary_post/SecondaryPost";
+import ListPlan from "../../components/ui/plans/ListPlan/ListPlan";
+import styles from "./Home.module.scss";
 const Home = () => {
 
     const filterState = useState(false);
@@ -13,14 +15,15 @@ const Home = () => {
     return (
         <div>
             <Header filterState={filterState}/>
-            {isFilterActive && <FilterTop filterState={filterState}/>}
-            {!isFilterActive && <RecommendedTop />}
-            <SecondaryPostList />
-            {posts.map((post, index) => (
-                <MainPost key={index} {...post} />
-            ))}
-
-            
+            <div className={styles.homeContainer}>
+                {isFilterActive && <FilterTop filterState={filterState}/>}
+                {!isFilterActive && <RecommendedTop />}
+                <SecondaryPostList />
+                <ListPlan />
+                {posts.map((post, index) => (
+                    <MainPost key={index} {...post} />
+                ))}
+            </div>
         </div>
     )
 }

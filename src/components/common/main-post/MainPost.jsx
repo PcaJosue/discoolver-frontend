@@ -76,7 +76,7 @@ const MainPost = ({ avatar, name, description, imageSize = 80, title, postDescri
             >
                 {carouselItems.map(item=>(
                     <div className="mainPostCarousel" key={item.id}>
-                        <img
+                        <img onDragStart={(e) => e.preventDefault()}
                             src={item.url}
                         />
                         <button>{item.title}</button>

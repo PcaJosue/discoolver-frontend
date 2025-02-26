@@ -2,6 +2,7 @@ import "./SecondaryPost.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CircleProfile from "../../common/circle_profile/CircleProfile";
+import secondaryPosts from "../../../assets/secondaryPosts";
 
 const SecondaryPostList = () => {
 
@@ -29,36 +30,6 @@ const SecondaryPostList = () => {
         }
     };
 
-    const posts = [
-        {
-            profileImg: "https://imgv3.fotor.com/images/gallery/AI-3D-Female-Profile-Picture.jpg",
-            image: "https://images.ctfassets.net/i3kf1olze1gn/7EiOswMbQZzEonbCHGmiQk/18cbecfdcf1b2b3cb2378bdc86f905a7/alev-takil-x2Or94kjaqo-unsplash.jpg?q=55&w=400",
-            name: "Nombre influencer a 1 línea como máximo",
-            nickname: "@nombreinfluencermáximo unalinea",
-            hashtag: "#Terrazas"
-        },
-        {
-            profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81c0TN0YeIgAaneu5g57xRXPp6dbRZcCwdQ&s",
-            image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRe82bWJUqma6Zq4_4nESas4ZAaYbNJvQaqD3sWHXkxyEICMIWS",
-            name: "Nombre influencer a 1 línea como máximo",
-            nickname: "@nombreinfluencermáximo unalinea",
-            hashtag: "#Moda"
-        },
-        {
-            profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81c0TN0YeIgAaneu5g57xRXPp6dbRZcCwdQ&s",
-            image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSoXHIuquLqXzMHfKNH2NW1wgkaGozKmQXA-ZJX-sCiGENdLae7",
-            name: "Nombre influencer a 1 línea como máximo",
-            nickname: "@nombreinfluencermáximo unalinea",
-            hashtag: "#Terrazas"
-        },
-        {
-            profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81c0TN0YeIgAaneu5g57xRXPp6dbRZcCwdQ&s",
-            image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSoXHIuquLqXzMHfKNH2NW1wgkaGozKmQXA-ZJX-sCiGENdLae7",
-            name: "Nombre influencer a 1 línea como máximo",
-            nickname: "@nombreinfluencermáximo unalinea",
-            hashtag: "#Terrazas"
-        }
-    ]
 
     return (
         <div className="containerSecondaryPost">
@@ -79,7 +50,7 @@ const SecondaryPostList = () => {
                 centerMode={false}
                 draggable
                 focusOnSelect={false}
-                infinite={false}
+                infinite={true}
                 keyBoardControl
                 minimumTouchDrag={80}
                 pauseOnHover
@@ -88,7 +59,7 @@ const SecondaryPostList = () => {
                 renderDotsOutside={false}
             >
                 {
-                    posts.map((post, index) => (
+                    secondaryPosts.map((post, index) => (
                         <div className="secondaryPostContainer" key={index}>
                             <div className="secondaryPostImage">
                                 <img src={post.image} alt="secondaryPost" onDragStart={(e) => e.preventDefault()} />
