@@ -5,7 +5,7 @@ const ButtonOutline = ({clickedState, children}) => {
     return (
         <button 
             className={`${styles.menuButtonContainer} ${isClicked ? styles.active : ""}`} onClick={()=>setIsClicked(!isClicked)} >
-            {...children}
+            {children}
         </button>
     )
 }
