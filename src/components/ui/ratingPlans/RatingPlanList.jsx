@@ -1,31 +1,30 @@
-import "./CircleHashtagList.scss";
-import CircleHashtag from "../../common/circle-hashtag/CircleHashtag";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import circleHashtags from "../../../assets/circlehashtags";
-
+import RatingPlan from "../../common/RatingPlan/RatingPlan";
+import ratingsData from "../../../assets/ratingsData";
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 6,
+      items: 4,
       slidesToSlide: 1, // optional, default to 1.
       partialVisibilityGutter: 150
     },
     tablet: {
-      breakpoint: { max: 1024, min: 465 },
-      items: 4,
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
       slidesToSlide: 1, // optional, default to 1.
-      partialVisibilityGutter: 50
+      partialVisibilityGutter: 90
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 3,
+      items: 2,
       slidesToSlide: 1, // optional, default to 1.,
-      partialVisibilityGutter: 5
+      partialVisibilityGutter: 20
     }
   };
 
-const CircleHashtagList = () => {
+
+const RatingPlanList = () => {
     return (
         <div>
             <Carousel
@@ -34,24 +33,24 @@ const CircleHashtagList = () => {
                 showDots={false}
                 responsive={responsive}
                 ssr={false} // means to render carousel on server-side.
-                infinite={false}
+                infinite={true}
                 autoPlay={false}
                 keyBoardControl={true}
                 customTransition="all .5"
                 transitionDuration={500}
-                containerClass="CircleHashtagListCarouselContainer"
+                containerClass="RatingPlanListCarouselContainer"
                 removeArrowOnDeviceType={["tablet", "mobile"]}
-                itemClass="CircleHashtagListCarouselItem"
+                itemClass="RatingPlanListCarouselItem"
                 partialVisible={true}
                 minimumTouchDrag={80}
             >
-                {circleHashtags.map((hashtag) => (
-                    <CircleHashtag key={hashtag.id} avatar={hashtag.avatar} hashtag={hashtag.hashtag} />
-                ))}
-                
+              {ratingsData.map((rating) => (
+                 <RatingPlan key={rating.id} ratingPlanImage={rating.ratingPlanImage} rating={rating.rating}  planName={rating.planName} />
+              ))}
+               
             </Carousel>
         </div>
     )
-}
+}   
 
-export default CircleHashtagList;
+export default RatingPlanList;

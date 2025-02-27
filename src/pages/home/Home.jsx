@@ -9,10 +9,12 @@ import ListPlan from "../../components/ui/plans/ListPlan/ListPlan";
 import styles from "./Home.module.scss";
 import InfluencerList from "../../components/ui/InfluencerList/InfluencerList";
 import CircleHashtagList from "../../components/ui/circleHashtagList/CircleHashtagList";
+import RatingPlanList from "../../components/ui/ratingPlans/RatingPlanList";
 const Home = () => {
 
     const filterState = useState(false);
     const [isFilterActive] = filterState;
+
 
     return (
         <div>
@@ -21,6 +23,7 @@ const Home = () => {
             <div className={styles.homeContainer}>
                 {isFilterActive && <FilterTop filterState={filterState}/>}
                 {!isFilterActive && <RecommendedTop />}
+                <RatingPlanList />
                 <CircleHashtagList />
                 <InfluencerList/>
                 <SecondaryPostList />

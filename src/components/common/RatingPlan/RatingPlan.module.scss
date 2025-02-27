@@ -1,0 +1,31 @@
+.ratingPlanContainer {
+    padding: 16px;
+    position: relative;
+    width: fit-content;
+    box-sizing: content-box;
+}
+
+
+.ratingPlanImageContainer {
+    img{
+        width: 135px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    button {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+    }
+}
+
+.ratingPlanTitleContainer {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
