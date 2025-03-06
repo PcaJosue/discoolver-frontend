@@ -1,4 +1,4 @@
-import styles from "./Hashtags.module.scss";
+import styles from "./hashtags.module.scss";
 
 const Hashtags = ({ hashtags }) => {
 

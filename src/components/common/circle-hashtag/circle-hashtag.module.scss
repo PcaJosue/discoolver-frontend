@@ -1,0 +1,30 @@
+.circleHashtagContainer{
+    position: relative;
+    width: 96px;
+    height: 96px;
+
+    button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        z-index: 5;
+        width: 80px;
+
+        .hashtag {
+           color: rgba(69, 90, 100, 1);
+           font-size: 12px;
+           font-weight: 400;
+           line-height: 16px;
+           word-wrap: break-word;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           white-space: nowrap;
+           max-width: 100%;
+        }
+    }
+}
+

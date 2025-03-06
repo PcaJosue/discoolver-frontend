@@ -1,15 +1,15 @@
-import Header from "../../components/common/Header/Header";
-import RecommendedTop from "../../components/ui/recommended_top/RecommendedTop";
-import MainPost from "../../components/common/main-post/MainPost";
+import Header from "../../components/common/header/header";
+import RecommendedTop from "../../components/ui/recommended-top/recommended-top";
+import MainPost from "../../components/common/main-post/main-post";
 import posts from "../../assets/posts";
 import { useState } from "react";
-import FilterTop from "../../components/ui/filterTop/FilterTop";
-import SecondaryPostList from "../../components/ui/secondary_post/SecondaryPost";
-import ListPlan from "../../components/ui/plans/ListPlan/ListPlan";
+import SecondaryPostList from "../../components/ui/secondary-post/secondary-post";
+import ListPlan from "../../components/ui/plans/list-plan/list-plan";
 import styles from "./Home.module.scss";
-import InfluencerList from "../../components/ui/InfluencerList/InfluencerList";
-import CircleHashtagList from "../../components/ui/circleHashtagList/CircleHashtagList";
-import RatingPlanList from "../../components/ui/ratingPlans/RatingPlanList";
+import InfluencerList from "../../components/ui/influencer-list/influencer-list";
+import CircleHashtagList from "../../components/ui/circle-hashtag-list/circle-hashtag-list";
+import RatingPlanList from "../../components/ui/rating-plans/rating-plan-list";
+import FilterTop from "../../components/ui/filter-top/filter-top";
 const Home = () => {
 
     const filterState = useState(false);
@@ -23,14 +23,15 @@ const Home = () => {
             <div className={styles.homeContainer}>
                 {isFilterActive && <FilterTop filterState={filterState}/>}
                 {!isFilterActive && <RecommendedTop />}
-                <RatingPlanList />
-                <CircleHashtagList />
                 <InfluencerList/>
-                <SecondaryPostList />
+                <CircleHashtagList />
                 <ListPlan />
+                <RatingPlanList />
+                <SecondaryPostList />
                 {posts.map((post, index) => (
                     <MainPost key={index} {...post} />
                 ))}
+                
                 
             </div>
         </div>

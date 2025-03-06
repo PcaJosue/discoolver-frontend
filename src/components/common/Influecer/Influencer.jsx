@@ -1,5 +1,5 @@
-import styles from "./Influencer.module.scss";
-import CircleProfile from "../circle_profile/CircleProfile";
+import styles from "./influencer.module.scss";
+import CircleProfile from "../circle-profile/circle-profile";
 const Influencer = ({avatar,nickname}) => {
     return (
         <div className={styles.influencerContainer}>

@@ -1,0 +1,73 @@
+.mainPostContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mainPostHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.mainPostHeaderText{
+    display: flex;
+    flex-direction: column;
+}
+
+.mainPostHeaderTextName{
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.mainPostHeaderTextDescription{
+    color: rgba(69, 90, 100, 1);
+    font-size: 14px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.mainPostCarousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    button {
+        position: absolute;
+        color: #2B2B40;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+        word-wrap: break-word;
+        background-color: white;
+        outline: 2px solid white;
+        outline-offset: 4px;
+        border-radius: 32px;
+        padding: 8px 16px;
+        border: none;
+        z-index: 10;
+        bottom: 16px;
+        left: 20px;
+
+    }
+}
+
+
+.customDotList {
+    gap: 8px !important;
+    position: relative;
+    padding-top: 8px;
+}
+

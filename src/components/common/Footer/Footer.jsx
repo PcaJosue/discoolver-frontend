@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.scss";
-import MenuButton from "../MenuButton/MenuButton";
+import MenuButton from "../menu-button/menu-button";
 import { useEffect, useState } from "react";
 const Footer = () => {
 

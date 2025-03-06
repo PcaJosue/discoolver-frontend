@@ -4,7 +4,7 @@ const posts = [
       name: "Nombre",
       description: "Sponsored",
       imageSize: 32,
-      title: "Lorem ipsum dolor sit amet",
+      title: "Nombre influencer",
       postDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo nulla, accumsan eget tempor a, condimentum at augue.",
       hashtags: ["#Hashtag", "#Hashtag", "#Hashtag", "#Hashtag", "#Hashtag", "#Hashtag"]

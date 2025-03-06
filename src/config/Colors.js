@@ -1,7 +1,7 @@
 const COLORS = {
     menuButton: {   
         active: "#263238",
-        inactive: "#90A4AE"
+        inactive: "#000000"
     },
     dropdown: {
         active: "#FF03C8",

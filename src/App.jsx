@@ -1,13 +1,13 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import './App.scss';
-import Home from "./pages/Home/Home";
-import WishList from "./pages/wish_list/WishList";
-import Search from "./pages/search/Search";
-import Calendar from "./pages/calendar/Calendar";
-import MyTrip from "./pages/my_trip/MyTrip";
-import MainLayout from "./components/layout/MainLayout";
-import NotFound from "./components/common/not_found/NotFound";
+import Home from "./pages/home/home";
+import WishList from "./pages/wish-list/wish-list";
+import Search from "./pages/search/search";
+import Calendar from "./pages/calendar/calendar";
+import MyTrip from "./pages/my-trip/my-trip";
+import MainLayout from "./components/layout/main-layout";
+import NotFound from "./components/common/not-found/not-found";
 function App() {
 
   return (

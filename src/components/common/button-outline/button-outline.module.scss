@@ -1,0 +1,31 @@
+.menuButtonContainer {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 32px;
+    text-transform: capitalize;
+    outline: 2px solid white;
+    outline-offset: 2px;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.active svg {
+    fill: #2B2B40;
+}

@@ -2,15 +2,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 16px;
+    padding: 4px 16px;
     max-height: 42px;
+    padding: 8px;
 }
 
 .header_icons {
     display: flex;
-    gap: 24px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
 .header_icons svg {
     cursor: pointer;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 4px 8px;
+    border: 1px solid #595D62;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+
 }

@@ -1,23 +1,21 @@
 .influencerContainer{
     display: flex;
     flex-direction: column;
-    gap:8px;
+    gap:1px;
     width: 80px;
 }
 
 .influencerInfo{
     width: 80px;
-    color: #90A4AE;
+    color: rgba(69, 90, 100, 1);
     font-size: 12px;
-    font-family: 'Roboto';
     font-weight: 400;
-    line-height: 12px;
+    line-height: 16px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 4px;
     border-radius: 4px;
-    border: 1px solid #90A4AE;
     letter-spacing: 0%;
 }

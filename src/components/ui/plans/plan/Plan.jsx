@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import styles from './Plan.module.scss';
-import ButtonOutline from '../../../common/buttonOutline/ButtonOutline';
-import SVGIcon from '../../../common/svg_icon/SvgIcon';
-import Title from '../../../common/text/Title';
-import Description from '../../../common/text/Description';
+import styles from './plan.module.scss';
+import ButtonOutline from '../../../common/button-outline/button-outline';
+import SVGIcon from '../../../common/svg-icon/svg-icon';
+import Title from '../../../common/text/title';
+import Description from '../../../common/text/description';
 
 const Plan = ({rating, title, description, image}) => {
 
-    const clickedState = useState(false);
 
   return (
     <div className={styles.PlanContainer}>
         <div className={styles.PlanImageContent}>
             <img src={image} alt="Plan" onDragStart={(e) => e.preventDefault()} />
-            <ButtonOutline clickedState={clickedState}>
+            <ButtonOutline>
                 <SVGIcon name="star" color="#575373" size={12} />
                 <span>{rating}</span>
             </ButtonOutline>
@@ -21,7 +20,7 @@ const Plan = ({rating, title, description, image}) => {
         <div className={styles.PlanTitleContent}>
             <Title title={title} />
             <div className={styles.PlanDescriptionContent}>
-                <SVGIcon name="pin" color="#455A64" width={16} height={16} />
+                <SVGIcon name="pin" color="rgba(0, 0, 0, 1)" width={16} height={16} />
                 <Description description={description} />
             </div>
         </div>
