@@ -2,3 +2,26 @@
     max-height: calc(100vh - 115px);
     overflow-y: auto;
 }
+
+.mainPostListContainer {
+    display: grid;
+    gap: 24px;
+    justify-content: center; // o start, según prefieras
+    align-items: center;
+  
+    // Móvil (hasta 767px)
+    @media screen and (max-width: 599px) {
+      grid-template-columns: 390px; // 1 columna fija
+    }
+  
+    // Tablet (768px a 1023px)
+    @media screen and (min-width: 600px) and (max-width: 1023px) {
+      grid-template-columns: 390px 390px; // 2 columnas fijas
+    }
+  
+    // Desktop (desde 1024px)
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 390px 390px 390px; // 3 columnas fijas
+    }
+  }
+  

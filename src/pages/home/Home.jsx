@@ -28,9 +28,13 @@ const Home = () => {
                 <ListPlan />
                 <RatingPlanList />
                 <SecondaryPostList />
-                {posts.map((post, index) => (
-                    <MainPost key={index} {...post} />
-                ))}
+
+                <div className={styles.mainPostListContainer}>
+                    {posts.map((post, index) => (
+                        <MainPost key={index} {...post} />
+                    ))}
+
+                </div>
                 
                 
             </div>
