@@ -3,37 +3,72 @@ import CircleHashtag from "../../common/circle-hashtag/circle-hashtag";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import circleHashtags from "../../../assets/circle-hashtags";
-
-const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 6,
-      slidesToSlide: 1, // optional, default to 1.
-      partialVisibilityGutter: 150
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 465 },
-      items: 4,
-      slidesToSlide: 1, // optional, default to 1.
-      partialVisibilityGutter: 50
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 3,
-      slidesToSlide: 1, // optional, default to 1.,
-      partialVisibilityGutter: 16
-    }
-  };
+import { useRef, useEffect, useState } from "react";
+import useCarouselItemCalculator from "../../../api/hooks/useCarouselItemCalculator";
 
 const CircleHashtagList = () => {
+
+  const containerRef = useRef(null);
+  const itemWidth = 104;
+  const gap = 16;
+  
+  // Estado para almacenar la configuración responsive
+  const [responsive, setResponsive] = useState({
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1, slidesToSlide: 1, partialVisibilityGutter: 0 },
+    tablet: { breakpoint: { max: 1024, min: 464 }, items: 1, slidesToSlide: 1, partialVisibilityGutter: 0 },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 1, slidesToSlide: 1, partialVisibilityGutter: 0 }
+  });
+  
+  // Estado para controlar si debemos renderizar el carrusel
+  const [isReady, setIsReady] = useState(false);
+  
+  const { 
+    visibleItems
+  } = useCarouselItemCalculator({
+    containerRef,
+    itemWidth,
+    gap
+  });
+
+  // Actualizar la configuración responsive cuando cambian los cálculos o los datos
+  useEffect(() => {
+    if (visibleItems > 0) {
+      setResponsive({
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: visibleItems,
+          slidesToSlide: 1,
+          partialVisibilityGutter: 10
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: visibleItems, // Ajustamos para tabletas
+          slidesToSlide: 1,
+          partialVisibilityGutter: 10
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: visibleItems, // Ajustamos para móviles
+          slidesToSlide: 1,
+          partialVisibilityGutter: 10
+        }
+      });
+      
+      // Indicar que estamos listos para renderizar
+      setIsReady(true);
+    }
+  }, [visibleItems, circleHashtags.length]);
+
+
     return (
-        <div>
-            <Carousel
-                swipeable={true}
-                draggable={true}
-                showDots={false}
-                responsive={responsive}
-                ssr={false} // means to render carousel on server-side.
+        <div ref={containerRef}>
+            {isReady && (
+                <Carousel
+                    swipeable={true}
+                    draggable={true}
+                    showDots={false}
+                    responsive={responsive}
+                    ssr={false} // means to render carousel on server-side.
                 infinite={false}
                 autoPlay={false}
                 keyBoardControl={true}
@@ -50,6 +85,7 @@ const CircleHashtagList = () => {
                 ))}
                 
             </Carousel>
+            )}
         </div>
     )
 }
