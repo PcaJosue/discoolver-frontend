@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import Plan from "../plan/plan";
 import { useRef, useEffect, useState } from "react";
 import useCarouselItemCalculator from "../../../../api/hooks/useCarouselItemCalculator";
-const ListPlan = () => {
+const ListPlan = ({data}) => {
 
   const containerRef = useRef(null);
   const itemWidth = 265;
@@ -78,54 +78,11 @@ const ListPlan = () => {
                 partialVisible={true}
                 minimumTouchDrag={80}
             >
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://i.ytimg.com/vi/To2onDip2iE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEggKyh_MA8=&rs=AOn4CLCiR8g5tOeNBZ5cOFlw-CPic9B2TA"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
-                <Plan image="https://img.freepik.com/premium-photo/ultraviolet-spectrum-blue-violet-neon-lights-laser-show-night-club-equalizer-abstract-fluorescent-background-optical-illusion-virtual-reality-physics-concept-physics-lab_1028938-448616.jpg"
-                 rating={"Label"} title="Nombre del plan" description="@nicknamenombreinfluencer01extralargos" />
+              {data.map((plan) => (
+                    <Plan key={plan.id} image={plan.image}
+                 rating={plan.rating} title={plan.title} description={plan.description} />
+              ))}
+                
             </Carousel>
             )}
         </div>

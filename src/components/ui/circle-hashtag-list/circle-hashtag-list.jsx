@@ -6,7 +6,7 @@ import circleHashtags from "../../../assets/circle-hashtags";
 import { useRef, useEffect, useState } from "react";
 import useCarouselItemCalculator from "../../../api/hooks/useCarouselItemCalculator";
 
-const CircleHashtagList = () => {
+const CircleHashtagList = ({data}) => {
 
   const containerRef = useRef(null);
   const itemWidth = 104;
@@ -80,7 +80,7 @@ const CircleHashtagList = () => {
                 partialVisible={true}
                 minimumTouchDrag={80}
             >
-                {circleHashtags.map((hashtag) => (
+                {data.map((hashtag) => (
                     <CircleHashtag key={hashtag.id} avatar={hashtag.avatar} hashtag={hashtag.hashtag} />
                 ))}
                 

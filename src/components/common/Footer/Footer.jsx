@@ -15,7 +15,7 @@ const Footer = () => {
                     <MenuButton text="Home" icon="home" isActive={currentPath === '/'} />
                 </NavLink>
                 <NavLink to="/wishlist" className={({ isActive }) => isActive ? setCurrentPath(window.location.pathname) : ''}>
-                    <MenuButton text="WishList" icon="wishlist" isActive={currentPath === '/wishlist'}   />
+                    <MenuButton text="Favoritos" icon="save" isActive={currentPath === '/wishlist'}   />
                 </NavLink>
                 <NavLink to="/search" className={({ isActive }) => isActive ? setCurrentPath(window.location.pathname) : ''}>
                     <MenuButton text="Search" icon="search" isActive={currentPath === '/search'}    />

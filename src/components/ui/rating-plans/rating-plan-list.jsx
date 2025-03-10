@@ -7,7 +7,7 @@ import useCarouselItemCalculator from "../../../api/hooks/useCarouselItemCalcula
 
 
 
-const RatingPlanList = () => {
+const RatingPlanList = ({data}) => {
   
   const containerRef = useRef(null);
   const itemWidth = 144;
@@ -82,7 +82,7 @@ const RatingPlanList = () => {
                 partialVisible={true}
                 minimumTouchDrag={80}
             >
-              {ratingsData.map((rating) => (
+              {data.map((rating) => (
                  <RatingPlan key={rating.id} ratingPlanImage={rating.ratingPlanImage} rating={rating.rating}  planName={rating.planName} />
               ))}
                

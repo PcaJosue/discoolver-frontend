@@ -1,11 +1,9 @@
 import "./secondary-post.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import CircleProfile from "../../common/circle-profile/circle-profile";
-import secondaryPosts from "../../../assets/secondary-posts";
 import SVGIcon from "../../common/svg-icon/svg-icon";
 import ButtonOutline from "../../common/button-outline/button-outline";
-const SecondaryPostList = () => {
+const SecondaryPostList = ({data}) => {
 
     const responsive = {
         superLargeDesktop: {
@@ -64,7 +62,7 @@ const SecondaryPostList = () => {
                 renderDotsOutside={false}
             >
                 {
-                    secondaryPosts.map((post, index) => (
+                    data.map((post, index) => (
                         <div className="secondaryPostContainer" key={index}>
                             <div className="secondaryPostImage">
                                 <img src={post.image} alt="secondaryPost" onDragStart={(e) => e.preventDefault()} />

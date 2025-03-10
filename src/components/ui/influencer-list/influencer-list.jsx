@@ -6,7 +6,7 @@ import influencerListData from "../../../assets/influencer-list";
 import { useRef, useEffect, useState } from "react";
 import useCarouselItemCalculator from "../../../api/hooks/useCarouselItemCalculator";
 
-const InfluencerList = () => {
+const InfluencerList = ({data}) => {
   const containerRef = useRef(null);
   const itemWidth = 80;
   const gap = 16;
@@ -79,7 +79,7 @@ const InfluencerList = () => {
           partialVisible={true}
           minimumTouchDrag={80}
         >
-          {influencerListData.map((influencer) => (
+          {data.map((influencer) => (
             <Influencer 
               key={influencer.id} 
               avatar={influencer.avatar} 

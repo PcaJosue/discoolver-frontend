@@ -10,6 +10,7 @@ import InfluencerList from "../../components/ui/influencer-list/influencer-list"
 import CircleHashtagList from "../../components/ui/circle-hashtag-list/circle-hashtag-list";
 import RatingPlanList from "../../components/ui/rating-plans/rating-plan-list";
 import FilterTop from "../../components/ui/filter-top/filter-top";
+import allPosts from "../../assets/all_posts";
 const Home = () => {
 
     const filterState = useState(false);
@@ -23,18 +24,42 @@ const Home = () => {
             <div className={styles.homeContainer}>
                 {isFilterActive && <FilterTop filterState={filterState}/>}
                 {!isFilterActive && <RecommendedTop />}
-                <InfluencerList/>
-                <CircleHashtagList />
-                <ListPlan />
-                <RatingPlanList />
-                <SecondaryPostList />
 
-                <div className={styles.mainPostListContainer}>
-                    {posts.map((post, index) => (
-                        <MainPost key={index} {...post} />
-                    ))}
+                { allPosts.map((post, index) =>{
+                    console.log(post);
 
-                </div>
+                    if (post.type === "main_post") {
+                        return (
+                            <div key={index} className={styles.mainPostListContainer}>
+                                {post.data.map((main_post, main_post_index) => (
+                                    <MainPost key={main_post_index} {...main_post} />
+                                ))}
+                            </div>
+                        );
+                        
+                    }
+
+                    if(post.type === "influencer_list") {
+                        return (<InfluencerList key={index} data={post.data}/>)
+                    }
+
+                    if(post.type === "circle_hashtag_plans") {
+                        return (<CircleHashtagList key={index} data={post.data}/>)
+                    }
+
+                    if(post.type === "list_plan") {
+                        return (<ListPlan key={index} data={post.data}/>)
+                    }
+
+                    if(post.type === "rating_plan") {
+                        return (<RatingPlanList key={index} data={post.data}/>)
+                    }
+
+                    if(post.type === "secondary_post") {
+                        return (<SecondaryPostList key={index} data={post.data}/>)
+                    }
+                    
+                })}
                 
                 
             </div>

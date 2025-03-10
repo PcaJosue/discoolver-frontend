@@ -3,7 +3,7 @@ import  styles from './responsive-select.module.scss';
 import SVGIcon from '../svg-icon/svg-icon';
 import COLORS from '../../../config/colors';
 
-const ResponsiveSelect = ({ option, onChange, isFilterItem = false }) => {
+const ResponsiveSelect = ({ option, onChange }) => {
   const [selected, setSelected] = useState(option.defaultValue);
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -37,19 +37,11 @@ const ResponsiveSelect = ({ option, onChange, isFilterItem = false }) => {
     </>
   );
 
-  const filterSelect = (
-    <>
-      <button className={styles.filterOption}>
-        <div className={styles.filterOptionText}>{displayLabel()}</div>
-        {option.values?.length > 1 && <SVGIcon name="dropdown" width={12} height={12} />}
-      </button>
-    </>
-  );
 
   return (
     <div className={styles.responsiveSelect}>
-      <div className={styles.selectDisplay} onClick={!isFilterItem ? toggleDropdown : () => {}}>
-        {!isFilterItem ? recommendSelect : filterSelect}
+      <div className={styles.selectDisplay} onClick={toggleDropdown}>
+        {recommendSelect}
       </div>
       {open && !isMobile && (
         <ul className={styles.dropdown}>
