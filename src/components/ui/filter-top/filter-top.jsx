@@ -5,10 +5,15 @@ import "react-multi-carousel/lib/styles.css";
 import SVGIcon from "../../common/svg-icon/svg-icon";
 import { useEffect } from "react";
 import Select from 'react-select';
+import Modal from 'react-modal';
 
 const FilterTop = () => {
 
     const [selectedOption, setSelectedOption] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedValues, setSelectedValues] = useState({});
+
     const options = [
         { label: "Vuelos", values: [{ value: 'Vuelo 1', label: 'Vuelo 1' }, { value: 'Vuelo 2', label: 'Vuelo 2' }, { value: 'Vuelo 3', label: 'Vuelo 3' }], id: 1 },
         { label: "Transporte", values: [{ value: 'Transporte 1', label: 'Transporte 1' }, { value: 'Transporte 2', label: 'Transporte 2' }, { value: 'Transporte 3', label: 'Transporte 3' }], id: 2 },
@@ -54,22 +59,74 @@ const FilterTop = () => {
         setSelectedOption(selectedOption);
     };
 
+    const handleChangeMobile = (option) => {
+        setSelectedCategory(option);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const selectOptionAndClose = (value) => {
+        setSelectedOption(value);
+        setSelectedValues(prev => ({
+            ...prev,
+            [selectedCategory.id]: value
+        }));
+        setIsModalOpen(false);
+    };
+
 
     return (
         <div className="filterTopContainer">
-            {isMobile && <Carousel responsive={responsive} deviceType="mobile" removeArrowOnDeviceType={["tablet", "mobile"]} containerClass="carousel-filter"
-                itemClass="carousel-filter-item"
-                sliderClass="carousel-filter-slider"
-            >
-                {options.map((option) => (
-                    <button className="filterOption">
-                        <div className="filterOptionText">{option.label}</div>
-                        {option.values?.length > 1 && <SVGIcon name="dropdown" width={12} height={12} />}
-                    </button>
-                ))}
+            {isMobile && (
+                <>
+                    <Carousel responsive={responsive} deviceType="mobile" removeArrowOnDeviceType={["tablet", "mobile"]} containerClass="carousel-filter"
+                        itemClass="carousel-filter-item"
+                        sliderClass="carousel-filter-slider"
+                    >
+                        <button className="filterOption" key={"Todos"} onClick={() => {}}>
+                            <div className="filterOptionText">
+                                Todos
+                            </div>
+                        </button>
+                        {options.map((option) => (
+                            <button className="filterOption" key={option.id} onClick={() => handleChangeMobile(option)}>
+                                <div className="filterOptionText">
+                                    {selectedValues[option.id]?.label || option.label}
+                                </div>
+                                {option.values?.length > 1 && <SVGIcon name="dropdown" width={12} height={12} />}
+                            </button>
+                        ))}
+                    </Carousel>
 
-            </Carousel>
-            }
+                    <Modal
+                        isOpen={isModalOpen}
+                        onRequestClose={closeModal}
+                        className="filterModal"
+                        overlayClassName="filterModalOverlay"
+                    >
+                        <div className="modalHeader">
+                            <h2>{selectedCategory?.label}</h2>
+                            <button onClick={closeModal}>
+                                <SVGIcon name="close" width={24} height={24} />
+                            </button>
+                        </div>
+                        <div className="modalContent">
+                            {selectedCategory?.values.map((value) => (
+                                <button
+                                    key={value.value}
+                                    className="modalOption"
+                                    onClick={() => selectOptionAndClose(value)}
+                                >
+                                    {value.label}
+                                </button>
+                            ))}
+                        </div>
+                    </Modal>
+                </>
+            )}
             {!isMobile && <>
                 <button className="filterSelect__control">
                     <div className="filterSelect__placeholder">Todos</div>
