@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.scss";
 import MenuButton from "../menu-button/menu-button";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 const Footer = () => {
 
     const [currentPath, setCurrentPath] = useState(window.location.pathname);

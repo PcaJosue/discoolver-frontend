@@ -11,11 +11,12 @@ import CircleHashtagList from "../../components/ui/circle-hashtag-list/circle-ha
 import RatingPlanList from "../../components/ui/rating-plans/rating-plan-list";
 import FilterTop from "../../components/ui/filter-top/filter-top";
 import allPosts from "../../assets/all_posts";
+import useMobile from "../../api/hooks/useMobile";
 const Home = () => {
 
     const filterState = useState(false);
     const [isFilterActive] = filterState;
-
+    const isMobile = useMobile();
 
     return (
         <div>
@@ -23,7 +24,7 @@ const Home = () => {
             
             <div className={styles.homeContainer}>
                 {isFilterActive && <FilterTop filterState={filterState}/>}
-                {!isFilterActive && <RecommendedTop />}
+                {!isFilterActive && isMobile && <RecommendedTop />}
 
                 { allPosts.map((post, index) =>{
                     console.log(post);
