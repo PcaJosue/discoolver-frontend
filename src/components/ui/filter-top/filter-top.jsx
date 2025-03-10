@@ -3,12 +3,13 @@ import "./filter-top.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SVGIcon from "../../common/svg-icon/svg-icon";
-import { useEffect } from "react";
 import Select from 'react-select';
 import Modal from 'react-modal';
+import { useIsMobile } from '../../../api/hooks/useMobile';
 
 const FilterTop = () => {
 
+    const isMobile = useIsMobile();
     const [selectedOption, setSelectedOption] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -23,13 +24,7 @@ const FilterTop = () => {
         { label: "Paquetes", values: [{ value: 'Paquete 1', label: 'Paquete 1' }, { value: 'Paquete 2', label: 'Paquete 2' }, { value: 'Paquete 3', label: 'Paquete 3' }], id: 6 }
     ];
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    
 
     const responsive = {
         superLargeDesktop: {

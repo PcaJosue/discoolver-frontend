@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import  styles from './responsive-select.module.scss';
 import SVGIcon from '../svg-icon/svg-icon';
 import COLORS from '../../../config/colors';
+import { useIsMobile } from '../../../api/hooks/useMobile';
 
 const ResponsiveSelect = ({ option, onChange }) => {
   const [selected, setSelected] = useState(option.defaultValue);
   const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);

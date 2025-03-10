@@ -1,13 +1,14 @@
 import styles from "./header.module.scss";
 import MenuButton from "../menu-button/menu-button";
-import { useState } from "react";
 import SVGIcon from "../svg-icon/svg-icon";
 import COLORS from "../../../config/colors";
+import { useIsMobile } from '../../../api/hooks/useMobile';
 
-const Header = ({ filterState }) => {
+const Header = ({filterState}) => {
 
     const [isFilterActive, setIsFilterActive] = filterState;
-    const [isMenuActive, setIsMenuActive] = useState(false);
+
+    const isMobile = useIsMobile();
 
     return (
         <header className={styles.header}>
@@ -18,16 +19,34 @@ const Header = ({ filterState }) => {
             </svg>
 
             <div className={styles.header_icons}>
-                {!isFilterActive && <button className={styles.filterButton} onClick={() => setIsFilterActive(!isFilterActive)}>
-                    <span>Filtros</span>
-                    <SVGIcon name="filter" color={isFilterActive ? COLORS.menuButton.active : COLORS.menuButton.inactive} width={16} height={16} />
-                </button>}
+                {!isFilterActive && isMobile &&(<>
+                    
+                    <button className={styles.filterButton} onClick={() => setIsFilterActive(!isFilterActive)}>
+                        <span>Filtros</span>
+                        <SVGIcon name="filter" color={isFilterActive ? COLORS.menuButton.active : COLORS.menuButton.inactive} width={16} height={16} />
+                    </button>
+                
+                </>)}
+
+                {!isFilterActive && !isMobile &&(
+                    <MenuButton  text="Filtros" icon="filter"  showText={false} handleAction={() => setIsFilterActive(!isFilterActive)} />
+                )}
+
                 {isFilterActive && <button className={styles.filterButton} onClick={() => setIsFilterActive(!isFilterActive)}>
                     <span>Ocultar</span>
                     <SVGIcon name="close" color={isFilterActive ? COLORS.menuButton.active : COLORS.menuButton.inactive} width={16} height={16} />
                 </button>}
-                <SVGIcon name="open" color={COLORS.menuButton.active} width={16} height={16} />
-                <MenuButton text="Menu" icon="menu" isActive={isMenuActive} showText={false} handleAction={() => setIsMenuActive(!isMenuActive)} />
+
+                { !isMobile && (
+                    <>
+                        <MenuButton text="Open" icon="save"  showText={false} handleAction={() => {}} />
+                        <MenuButton text="Menu" icon="calendar"  showText={false} handleAction={() => {}} />
+                        <MenuButton text="Menu" icon="my-trip"  showText={false} handleAction={() => {}} />
+                    </>
+                )}
+
+                <MenuButton text="Open" icon="open"  showText={false} handleAction={() => {}} />
+                <MenuButton text="Menu" icon="menu"  showText={false} handleAction={() => {}} />
             </div>
         </header>
     )
